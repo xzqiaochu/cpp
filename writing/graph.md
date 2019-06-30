@@ -23,16 +23,18 @@
 
 ## 最短路算法
 
-- Floyd：全源最短路 O($N^{3}$)
-- Dijkstra；不能处理负权边 O($N^{2}$)
-- Bellman-Ford：可处理负权边 O(NE)
-- SPFA：对Bellman-Ford的优化，采用队列操作
+- Floyd：全源最短路 O($n^{3}$)
+- Dijkstra；不能处理负权边 O($n^{2}$)
+- 堆优化的Dijkstra：O(m log n)
+- Bellman-Ford：可处理负权边 O(mn)
+- SPFA：对Bellman-Ford的优化，采用队列操作 O(km) k是一个较小的常数，平均值为2
 
 ## 图的连通性问题
 
-- Floyd：O($N^{3}$)
-- DFS：O($N^{2}$)
+- Floyd：O($n^{3}$)
+- DFS：O($n^{2}$)
 
 ## 强连通分量
 
-- Korasaju：O(V + E)
+- Korasaju：O(m + n)
+- 并查集
