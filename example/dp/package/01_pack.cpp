@@ -27,7 +27,7 @@
 
 const int MAXN = 37, MAXM = 207;
 
-int n, m, w[MAXN], c[MAXN], dp[MAXM];
+int n, m, w[MAXN], c[MAXN], f[MAXM];
 
 int main()
 {
@@ -36,7 +36,7 @@ int main()
         scanf("%d%d", w + i, c + i);
     for (int i = 1; i <= n; i++)
         for (int j = m; j >= w[i]; j--)
-            dp[j] = std::max(dp[j], dp[j - w[i]] + c[i]);
-    printf("%d", dp[m]);
+            f[j] = std::max(f[j], f[j - w[i]] + c[i]);
+    printf("%d", f[m]);
     return 0;
 }
