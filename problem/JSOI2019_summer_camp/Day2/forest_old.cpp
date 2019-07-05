@@ -93,8 +93,8 @@ ll getD()
 
 int main()
 {
-    freopen("forest.in", "r", stdin);
-    freopen("forest.out", "w", stdin);
+    // freopen("forest.in", "r", stdin);
+    // freopen("forest.out", "w", stdout);
     scanf("%d", &n);
     for (int i = 1; i <= n; i++)
         scanf("%d", point + i);
