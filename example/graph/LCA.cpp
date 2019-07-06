@@ -7,9 +7,9 @@
 #include <cmath>
 #include <queue>
 
-using namespace std;
-
 #define next Next
+
+using namespace std;
 
 const int MAXN = 50007, MAXM = 2 * MAXN, MAXK = 25;
 
