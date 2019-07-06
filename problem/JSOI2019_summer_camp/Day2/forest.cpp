@@ -77,7 +77,9 @@ void merge(int x, int y)
 
 void bfs()
 {
-    q.push(1), dep[1] = a[1];
+    q.push(1);
+    dep[1] = 1;
+    dis[1] = a[1];
     while (!q.empty())
     {
         int x = q.front();
@@ -158,7 +160,7 @@ int main()
         scanf("%d", del_list + i);
     // 读入完成
     init(); // 初始化
-    bfs(); // 预处理
+    bfs();  // 预处理
     int ans = 1;
     for (int i = 1; i <= n; i++)
         ans = (ll)ans * a[i] % P;
@@ -168,7 +170,7 @@ int main()
         int now = del_list[i];
         int fTreeX = getRoot(edge[now].x), fTreeY = getRoot(edge[now].y);
         int temp = ((ll)dia[fTreeX] * dia[fTreeY]) % P; // 暂存两数的直径之积
-        ans = (ll)ans * zpow(temp, P - 2) % P;      // 上次的 ans 除两棵树的直径（乘法逆元）
+        ans = (ll)ans * zpow(temp, P - 2) % P;          // 上次的 ans 除两棵树的直径（乘法逆元）
         build(now);
         temp = dia[fTreeX];       // 暂存新树的直径
         ans = (ll)ans * temp % P; // ans * 新树的直径
