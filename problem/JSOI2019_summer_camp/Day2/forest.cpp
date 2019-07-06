@@ -1,4 +1,5 @@
-// 秀秀的森林（forest）
+// 秀秀的森林(forest) AC
+// author: xzqiaochu
 #include <cstdio>
 #include <cmath>
 #include <queue>
@@ -9,7 +10,7 @@ using namespace std;
 
 typedef long long ll;
 
-const int MAXN = 1e5 + 7, MAXM = MAXN, MAXK = 25;
+const int MAXN = 1e5 + 7, MAXM = 2 * MAXN, MAXK = 25;
 const ll P = 1e9 + 7;
 
 int n, a[MAXN];
