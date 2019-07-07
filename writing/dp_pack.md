@@ -1,6 +1,6 @@
 # 背包动态规划 `2019.07.04`
 
-## 0/1 背包
+## 1. 0/1 背包(ZeroOnePack)
 
 ### Problem
 
@@ -37,6 +37,7 @@ for (int i = 1; i <= n; i++)
         f[i][j] = max(f[i - 1][j], f[i - 1][j - w[i]] + c[i]);
 ```
 
+- 时间复杂度 $O(nm)$
 - 空间复杂度 $O(nm)$
 
 #### Optimization：滚动数组
@@ -47,9 +48,27 @@ for (int i = 1; i <= n; i++)
         f[j] = max(f[j], f[j - w[i]] + c[i]);
 ```
 
+- 时间复杂度 $O(nm)$
 - 空间复杂度 $O(m)$
 
-## 完全背包
+#### Model
+
+```c++
+void ZeroOnePack(int cost, int val)
+{
+    for (int j = m; j >= cost; j--)
+        f[j] = max(f[j], f[j - cost] + val);
+}
+
+// 调用
+for (int i = 1; i <= n; i++)
+    ZeroOnePack(w[i], c[i]);
+```
+
+- 时间复杂度 $O(nm)$
+- 空间复杂度 $O(m)$
+
+## 2. 完全背包
 
 ### Problem
 
@@ -72,7 +91,7 @@ f[i, j - w[i]] + c[i]  &  j - w[i] ≥ 0
 \end{cases}
 $$
 
-Code
+### Code
 
 ```c++
 for (int i = 1; i <= n; i++)
@@ -84,3 +103,20 @@ for (int i = 1; i <= n; i++)
 - 空间复杂度：$O(m)$
 
 两层for循环次序可以颠倒
+
+#### Model
+
+```c++
+void CompletePack(int cost, int val)
+{
+    for (int j = cost; j <= m; j++)
+        f[j] = max(f[j], f[j - cost] + val);
+}
+
+// 调用
+for (int i = 1; i <= n; i++)
+    CompletePack(w[i], c[i]);
+```
+
+- 时间复杂度：$O(nm)$
+- 空间复杂度：$O(m)$

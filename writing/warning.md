@@ -6,6 +6,6 @@
 
 - 例如：n个城市间共有m条道路，即为有$2*m$条边
 
-## 0xW1 next数组
+## 0xN1 next数组
 
 部分OJ next数组报错，最好添加 `#define next Next`
