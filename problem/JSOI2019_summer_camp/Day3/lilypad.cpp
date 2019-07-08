@@ -1,3 +1,6 @@
+// Ëç∑Ëä±Ê±†Â°ò(lilypad)
+// author: xzqiaochu
+// status: AC
 #include <cstdio>
 #include <cstring>
 #include <utility>
@@ -20,7 +23,7 @@ int pro[8][2] =
 {-1, -2},
 {-2, -1}
 };
-int m, n, sta, tar, a[MAXN][MAXN]; // π≤ m ––£¨n ¡–
+int m, n, sta, tar, a[MAXN][MAXN]; // ÔøΩÔøΩ m ÔøΩ–£ÔøΩn ÔøΩÔøΩ
 int tot, head[MAXN * MAXN], ver[16 * MAXN * MAXN], edge[16 * MAXN * MAXN], next[16 * MAXN * MAXN];
 int d[MAXN * MAXN];
 bool v[MAXN * MAXN];
@@ -37,7 +40,7 @@ inline int getID(int x, int y)
 	return (x - 1) * n + y;
 }
 
-inline bool judge(int x, int y) // µ⁄ x ––£¨y ¡–
+inline bool judge(int x, int y) // ÔøΩÔøΩ x ÔøΩ–£ÔøΩy ÔøΩÔøΩ
 {
 	if (x >= 1 && x <= m && y >= 1 && y <= n)
 		return true;
@@ -101,8 +104,8 @@ bool dijkstra()
 
 int main()
 {
-	freopen("lilypad.in", "r", stdin);
-	freopen("lilypad.out", "w", stdout);
+	// freopen("lilypad.in", "r", stdin);
+	// freopen("lilypad.out", "w", stdout);
 	scanf("%d%d", &m, &n);
 	for (int i = 1; i <= m; i++)
 		for (int j = 1; j <= n; j++)

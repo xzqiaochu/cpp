@@ -1,3 +1,6 @@
+// 灯笼草(lantern)
+// author: xzqiaochu
+// status: MTL
 #include <cstdio>
 
 const int MAXN = 1e4 + 7;
@@ -55,8 +58,8 @@ bool check(int r)
 
 int main()
 {
-	freopen("lantern.in", "r", stdin);
-	freopen("lantern.out", "w", stdout);
+	// freopen("lantern.in", "r", stdin);
+	// freopen("lantern.out", "w", stdout);
 	scanf("%d%d", &n, &m);
 	for (int i = 1; i <= n; i++)
 		for (int j = 1; j <= m; j++)

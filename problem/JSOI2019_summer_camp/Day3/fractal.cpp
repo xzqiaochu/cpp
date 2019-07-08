@@ -1,3 +1,6 @@
+// 分形(fractal)
+// author: xzqiaochu
+// status: AC
 #include <cstdio>
 
 int yc, xc;
@@ -43,8 +46,8 @@ bool check(comp a)
 
 int main()
 {
-	freopen("fractal.in", "r", stdin);
-	freopen("fractal.out", "w", stdout);
+	// freopen("fractal.in", "r", stdin);
+	// freopen("fractal.out", "w", stdout);
 	scanf("%d%d", &yc, &xc);
 	scanf("%lf%lf", &sy, &sx);
 	scanf("%lf%lf", &p, &q);
