@@ -159,16 +159,34 @@ e.g. 如果 $n_i$ 为13，就将这种物品分成系数分别为 1,2,4,6 的四
 二进制拆分法
 
 ```c++
-void MultiplePack(int cost, int weight, int amount)
+void MultiplePack(int cost, int val, int amount)
 {
     if (cost * amount >= m)
-        CompletePack(cost, weight);
+        CompletePack(cost, val);
         return;
     for (int k = 1; k < amount; amount -= k, k *= 2) // 1,2,4
-            ZeroOnePack(k * cost, k * weight);
-    ZeroOnePack(amount * cost, amount * weight); // 6
+            ZeroOnePack(k * cost, k * val);
+    ZeroOnePack(amount * cost, amount * val); // 6
 }
+
+// 调用
+for (int i = 1; i <= n; i++)
+    MultiplePack(w[i], c[i], a[i]);
 ```
 
 - 时间复杂度: $O(v\sum log\ a_i)$
 - 时间复杂度: $O(v)$
+
+## 4. 混合三种背包问题
+
+### Code
+
+```c++
+for (int i = 1; i <= n; i++)
+    if 第i件物品属于0/1背包
+        ZeroOnePack(c[i], w[i]);
+    else if 第i件物品属于完全背包
+        CompletePack(c[i], w[i]);
+    else if 第i件物品属于多重背包
+        MultiplePack(c[i], w[i], a[i]);
+```
