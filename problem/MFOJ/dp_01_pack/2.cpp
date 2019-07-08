@@ -4,24 +4,22 @@
 #include <cstdio>
 #include <algorithm>
 
-const int MAXN = 1e4 + 7, MAXV = 1e5 + 7;
-
-int n, k, v, w[MAXN][MAXN], c[MAXN][MAXN], f[MAXV];
+int n, K, W, w[11000], c[11000], a[1100][1100], f[11000];
 
 int main()
 {
-    scanf("%d%d%d", &n, &k, &v);
+    scanf("%d%d%d", &n, &K, &W);
     for (int i = 1; i <= n; i++)
     {
-        int nc, nw, nk;
-        scanf("%d%d%d", &nc, &nw, &nk);
-        c[nk][++c[nk][0]] = nc;
-        w[nk][++w[nk][0]] = nw;
+        int t;
+        scanf("%d%d%d", c + i, w + i, &t);
+        a[t][++a[t][0]] = i;
     }
-    for (int i = 1; i <= k; i++)
-        for (int j = v; j >= 1; j--)
-            for (int kk = 1; kk <= w[i][0]; kk++)
-                f[j] = std::max(f[j], f[std::max(j - w[i][kk], 0)] + c[i][kk]);
-    printf("%d", f[v]);
+    for (int k = 1; k <= K; k++)
+        for (int v = W; v >= 1; v--)
+            for (int i = 1; i <= a[k][0]; i++)
+                if (v - w[a[k][i]] >= 0)
+                    f[v] = std::max(f[v], f[v - w[a[k][i]]] + c[a[k][i]]);
+    printf("%d", f[W]);
     return 0;
 }
