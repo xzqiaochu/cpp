@@ -25,7 +25,10 @@ void completePack(int cost, int val)
 void multiplePack(int cost, int val, int amount)
 {
     if (cost * amount >= V)
+    {
         completePack(cost, val);
+        return;
+    }
     for (int k = 1; k < amount; amount -= k, k *= 2)
         zeroOnePack(k * cost, k * val);
     zeroOnePack(amount * cost, amount * val);
