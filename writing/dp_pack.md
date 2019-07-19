@@ -31,7 +31,7 @@ $$
 
 ### Code
 
-```c++
+```cpp
 for (int i = 1; i <= N; i++)
     for (int v = w[i]; v <= V; j++)
         f[i][v] = max(f[i - 1][v], f[i - 1][v - w[i]] + c[i]);
@@ -42,7 +42,7 @@ for (int i = 1; i <= N; i++)
 
 #### Optimization：滚动数组
 
-```c++
+```cpp
 for (int i = 1; i <= N; i++)
     for (int j = v; j >= w[i]; j--)
         f[j] = max(f[j], f[j - w[i]] + c[i]);
@@ -53,7 +53,7 @@ for (int i = 1; i <= N; i++)
 
 #### Model
 
-```c++
+```cpp
 void ZeroOnePack(int cost, int val)
 {
     for (int v = V; v >= cost; v--)
@@ -93,7 +93,7 @@ $$
 
 ### Code
 
-```c++
+```cpp
 for (int i = 1; i <= N; i++)
     for (int v = w[i]; j <= V; v++)
         f[v] = max(f[v], f[v - w[i]] + c[i]);
@@ -106,7 +106,7 @@ for (int i = 1; i <= N; i++)
 
 #### Model
 
-```c++
+```cpp
 void CompletePack(int cost, int val)
 {
     for (int v = cost; v <= V; v++)
@@ -158,7 +158,7 @@ e.g. 如果 $n_i$ 为 $13$ ，就将这种物品分成系数分别为 $1,2,4,6$ 
 
 二进制拆分法
 
-```c++
+```cpp
 void MultiplePack(int cost, int val, int amount)
 {
     if (cost * amount >= V)
@@ -183,7 +183,7 @@ for (int i = 1; i <= N; i++)
 
 ### Code
 
-```c++
+```cpp
 for (int i = 1; i <= N; i++)
     if 第i件物品属于0/1背包
         ZeroOnePack(c[i], w[i]);
