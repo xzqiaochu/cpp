@@ -56,10 +56,10 @@ No
 
 ### Code
 
-```c++
+```cpp
 /* lemon AC
 author: std */
-#include <bits/stdc++.h>
+#include <bits/stdcpp.h>
 int T, n;
 int main(){
 	// freopen("lemon.in", "r", stdin);
@@ -137,7 +137,7 @@ Jerry 有 n 个帮手，每个帮手有个初始积分ܽ݅，现在进行若干�
 
 我的
 
-```c++
+```cpp
 /* helpers PAC(3WA)
 author: xzqiaochu */
 #include <cstdio>
@@ -178,10 +178,10 @@ int main()
 
 标程
 
-```c++
+```cpp
 /* helpers PAC(3WA)
 author: std */
-#include <bits/stdc++.h>
+#include <bits/stdcpp.h>
 
 #define LL long long
 
