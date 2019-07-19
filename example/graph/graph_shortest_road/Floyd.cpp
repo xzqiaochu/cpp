@@ -1,4 +1,4 @@
-/* Floyed全局最短路
+/* Floyd全局最短路
 时间复杂度：O(n^3)
 出处：MFOJ graph_shortest_road A
 最后修改时间：2019-06-08 */
@@ -58,7 +58,7 @@ int main()
         double d = sqrt(pow(x[from] - x[to], 2) + pow(y[from] - y[to], 2));
         dis[from][to] = d, dis[to][from] = d;
     }
-    // Floyed全局最短路
+    // Floyd全局最短路
     for (int k = 1; k <= n; k++)
         for (int i = 1; i <= n; i++)
             for (int j = 1; j <= n; j++)
