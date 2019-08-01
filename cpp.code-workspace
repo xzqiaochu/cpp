@@ -5,6 +5,14 @@
 		}
 	],
 	"settings": {
+		"git.autofetch": true,
+		"markdownlint.config": {
+			"MD024": false,
+			"MD010": false
+		},
+		"git.confirmSync": false,
+		"c-cpp-compile-run.c-flags": "-Wall -Wextra -Werror",
+		"c-cpp-compile-run.cpp-flags": "-Wall -Wextra -Werror",
 		"files.associations": {
 			"iostream": "cpp",
 			"cmath": "cpp",
