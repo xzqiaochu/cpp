@@ -1,11 +1,9 @@
-//你的程序 
-#include <iostream>
-
-using namespace std; 
+// 你的程序 
+#include <cstdio>
 
 int main() {
 	int a, b;
-	cin >> a >> b;
-	cout << a + b;
+	scanf("%d%d", &a, &b);
+	printf("%d", a + b);
 	return 0; 
 }

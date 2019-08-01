@@ -1,11 +1,9 @@
-//标程 或 暴力 
-#include <iostream>
-
-using namespace std; 
+// 标程或暴力 
+#include <cstdio>
 
 int main() {
 	int a, b;
-	cin >> a >> b;
-	cout << a + b;
+	scanf("%d%d", &a, &b);
+	printf("%d", a + b);
 	return 0; 
 }

@@ -4,7 +4,7 @@
 
 int main() {
 	int n;
-	printf("请输入测试点数目：");
+	printf("The number of cases: ");
 	scanf("%d", &n); 
 	for (int i = 1; i <= n; i++) {
 		system("random.exe > data.in");
@@ -16,7 +16,7 @@ int main() {
 			puts("Wrong Answer");
 			return 0;
 		} else {
-			printf("Accepted, 测试点 #%d, 用时 %.01fms\n", i, ed - st);
+			printf("Accepted, Case #%d, Time %.0fms\n", i, ed - st);
 		}
 	}
 } 
