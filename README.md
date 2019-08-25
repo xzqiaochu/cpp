@@ -1,5 +1,5 @@
 # cpp
 
-## My program practicing for NOI
+My program practicing for NOI
 
-### Auther: xzqiaochu
+Auther: xzqiaochu
