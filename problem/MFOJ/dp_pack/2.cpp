@@ -1,6 +1,6 @@
 // 决战钻石岛 (http://www.mfstem.org/contest/25/problem/2)
 // author: xzqiaochu
-// status: dev
+// status: AC
 #include <cstdio>
 #include <algorithm>
 
