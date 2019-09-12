@@ -3,5 +3,7 @@
 *.out
 *.ans
 test
+dev
+debug
 backup
 images
