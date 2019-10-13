@@ -1,6 +1,9 @@
-// 飞扬的小鸟(bird) ((http://www.mfstem.org/contest/18/problem/C)
+// 飞扬的小鸟(bird)
+// http://www.mfstem.org/contest/18/problem/C
+// https://www.luogu.org/problem/P1941
 // author: xzqiaochu
-// status: dev
+// status: AC
+// time: 2019/10/13
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
@@ -30,7 +33,7 @@ void initPre()
         cnt[i] += cnt[i - 1];
 }
 
-void updateBy(int val, bool add = true, int i = i, int j = j)
+void updateBy(int val, int add)
 {
     if (val < 0)
         return;
@@ -55,24 +58,97 @@ void dp()
 {
     for (i = 1; i <= n; i++)
     {
-        for (j = 1; j <= n; j++)
+        // 按若干次转移来的
+        for (int k = 1; k <= c[i].up; k++) // 枚举 转移前（上一阶段）的位置 ？？？
+        {
+            int best = f[i - 1][k] < 0 ? -1 : f[i - 1][k] + 1; // 保存到当前的最优解
+            for (j = k + c[i].up; j <= m; j += c[i].up)        // 按 1，2，3... 次
+            {
+                if (best >= 0) // 可以转移到当前
+                {
+                    updateBy(best, 0);
+                    // 为下一次循环做准备
+                    if (f[i - 1][j] >= 0)
+                        best = min(best, f[i - 1][j]) + 1;
+                    else
+                        best++;
+                }
+                else
+                {
+                    // 为下一次循环做准备
+                    if (f[i - 1][j] >= 0)
+                        best = f[i - 1][j] + 1;
+                }
+            }
+        }
+
+        // 上一次未点击
+        for (j = 1; j < m; j++)
         {
             if (f[i][j] == -2)
                 continue;
-            if (j + c[i].down <= m)
-                updateBy(f[i - 1][j + c[i].down], false);
-            for (int k = 1; j - k * c[i].up >= 1; k++)
-                updateBy(f[i - 1][j - k * c[i].up]);
-            for (int k = 0; k < c[i].up; k++)
-                if (m - k >= 1)
-                    updateBy(f[i - 1][m - k], i, m);
+            if (j + c[i].down <= m) // 上一次未点击
+                updateBy(f[i - 1][j + c[i].down], 0);
+        }
+        // 碰顶（此时 j = m）
+        for (int k = m, cnt = 1; k >= 1; k--)
+        {
+            updateBy(f[i - 1][k], cnt);
+            if (k != m && (m - k) % c[i].up == 0)
+                cnt++;
         }
         check();
     }
 }
 
+// void dp()
+// {
+//     for (i = 1; i <= n; i++)
+//     {
+//         for (j = 1; j <= m; j++)
+//         {
+//             if (f[i][j] == -2)
+//                 continue;
+//             if (j + c[i].down <= m) // 上一次未点击
+//             	updateBy(f[i - 1][j + c[i].down], 0);
+//             // 下面一个for循环浪费时间，时间复杂度为平方级
+// 			for (int k = j - c[i].up, cnt = 1; k >= 1; k -= c[i].up, cnt++) // 上一次点击多次（但未上升到顶部）
+// 				updateBy(f[i - 1][k], cnt);
+// 			if (j == m) // 碰顶
+// 				for (int k = m, cnt = 1; k >= 1; k--)
+//                 {
+//                     updateBy(f[i - 1][k], cnt);
+//                     if (k != m && (m - k) % c[i].up == 0)
+//                         cnt++;
+//                 }
+//         } 
+//         check();
+//     }
+// }
+
+void print_ans()
+{
+    int ans = INF;
+    for (int i = 1; i <= m; i++)
+        if (f[n][i] >= 0)
+            ans = min(ans, f[n][i]);
+    printf("1\n%d", ans);
+}
+
+void debug()
+{
+    for (int i = m; i >= 1; i--)
+    {
+        for (int j = 1; j <= n; j++)
+            printf("%2d ", f[j][i]);
+        puts("");
+    }
+}
+
 int main()
 {
+    // freopen("bird.in", "r", stdin);
+    // freopen("bird.out", "w", stdout);
     scanf("%d%d%d", &n, &m, &k);
     for (int i = 1; i <= n; i++)
         scanf("%d%d", &c[i].up, &c[i].down);
@@ -89,12 +165,7 @@ int main()
     }
     initPre();
     dp();
-    // int ans = INF;
-    for (int i = 1; i <= m; i++)
-        printf("%d\n", f[n][i]);
-    // for (int i = 1; i <= m; i++)
-    //     if (f[n][i] >= 0)
-    //         ans = min(ans, f[n][i]);
-    // printf("1\n%d", ans);
+    // debug();
+    print_ans();
     return 0;
 }
