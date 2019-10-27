@@ -1,9 +1,16 @@
+// 对拍主程序
+// my.cpp 每次运行时会自动编译
+// radmon.cpp 和 std.cpp 请手动编译
+// 注意事项：
+// 1. 程序直接用标准输入输出即可（对拍程序已经将输入输出重定向了）
+// 2. 比较时会过滤掉行末空格和尾行回车
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
 
 int main() {
 	puts("Compiling my.cpp ...");
+	// 我这里是最严格的编译，所有警告都会被视作致命错误
 	if (system("g++ my.cpp -o my.exe -Wall -Wextra -Werror"))
 	{
 		puts("Compile Error my.cpp");

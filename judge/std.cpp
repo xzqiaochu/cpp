@@ -1,4 +1,4 @@
-// std or hard
+// 标程 或 暴力（请手动编译）
 #include <cstdio>
 
 int main() {

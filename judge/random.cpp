@@ -1,16 +1,16 @@
-// æµ‹è¯•ç‚¹ç”Ÿæˆ
+// ²âÊÔµãÉú³É³ÌĞò£¨ÇëÊÖ¶¯±àÒë£©
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
 
-int rdm(int a, int b) { // åŒºé—´[a, b]å†…çš„éšæœºæ•°
+int rdm(int a, int b) { // Çø¼ä[a, b]ÄÚµÄËæ»úÊı
 	return (rand() % (b - a + 1)) + a;
 }
 
 int main() {
 	struct timeb timeseed;
 	ftime(&timeseed);
-	srand(timeseed.time * 1000 + timeseed.millitm); // æ¯«ç§’çº§éšæœºæ•°ç§å­ 
+	srand(timeseed.time * 1000 + timeseed.millitm); // ºÁÃë¼¶Ëæ»úÊıÖÖ×Ó 
 	// data
 	int a = rdm(1, 9), b = rdm(1, 9);
 	// output
