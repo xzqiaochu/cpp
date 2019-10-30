@@ -1,9 +1,9 @@
 // 对拍主程序（program to program)
 // 注意事项：
-// 1. 程序直接用标准输入输出即可
+// 1. radmon.cpp 和 std.cpp 请手动编译
 // 2. my.cpp 每次运行时会自动编译
-// 3. radmon.cpp 和 std.cpp 请手动编译
-// 2. 比较时会过滤掉行末空格和尾行回车
+// 3. 程序直接用标准输入输出即可
+// 4. 比较时会过滤掉行末空格和尾行回车
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
