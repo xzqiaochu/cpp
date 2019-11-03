@@ -17,7 +17,7 @@ int main() {
 	// 编译程序
 	puts("Compiling my.cpp...");
 	// 我这里是最严格的编译，所有警告都会被视作致命错误
-	if (system("g++ my.cpp -o my.exe -Wall -Wextra -Werror"))
+	if (system("g++ my.cpp -o my.exe -Wall -Werror"))
 	// if (system("g++ my.cpp -o my.exe -Wall"))
 		return 0;
 	puts("Compiled");
@@ -45,4 +45,4 @@ int main() {
 	system("del data.in >nul");
 	system("del data.out >nul");
 	system("del data.ans >nul");
-} 
+}

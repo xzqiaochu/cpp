@@ -13,9 +13,8 @@
                 "-o", //对象名，不进行编译优化
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",  //当前文件名（去掉扩展名）
                 "-Wall",
-                "-Wextra",
                 "-Werror",
-                "-Wl,--stack=536870912"
+                "-Wl,--stack=536870912" // 512MB
             ],
           // 所以以上部分，就是在shell中执行（假设文件名为filename.cpp）
           // g++ filename.cpp -o filename.exe

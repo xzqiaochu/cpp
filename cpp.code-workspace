@@ -7,8 +7,8 @@
 	"settings": {
 		"git.autofetch": true,
 		"git.confirmSync": false,
-		"c-cpp-compile-run.c-flags": "-Wall -Wextra -Werror",
-		"c-cpp-compile-run.cpp-flags": "-Wall -Wextra -Werror",
+		"c-cpp-compile-run.c-flags": "-Wall -Werror",
+		"c-cpp-compile-run.cpp-flags": "-Wall -Werror",
 		"files.associations": {
 			"iostream": "cpp",
 			"cmath": "cpp",
