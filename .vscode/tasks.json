@@ -1,12 +1,12 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
+    //See https://go.microsoft.com/fwlink/?LinkId=733558
+    //for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",  // 任务的名字叫Build，注意是大小写区分的，等会在launch中调用这个名字
-            "type": "shell",  // 任务执行的是shell命令，也可以是
-            "command": "g++", // 命令是g++
+            "label": "Compiled",  //任务的名字叫Compiled，注意是大小写区分的，等会在launch中调用这个名字
+            "type": "shell",  //任务执行的是shell命令，也可以是
+            "command": "g++", //命令是g++
             "args": [
                 "-g",
                 "${file}", //当前文件名
@@ -16,8 +16,8 @@
                 "-Werror",
                 "-Wl,--stack=536870912" // 512MB
             ],
-          // 所以以上部分，就是在shell中执行（假设文件名为filename.cpp）
-          // g++ filename.cpp -o filename.exe
+          //所以以上部分，就是在shell中执行（假设文件名为filename.cpp）
+          //g++ filename.cpp -o filename.exe -Wall -Werror -Wl,--stack=536870912
             "group": { 
                 "kind": "build",
                 "isDefault": true   
@@ -31,27 +31,3 @@
         }
     ]
 }
-// {
-//     // See https://go.microsoft.com/fwlink/?LinkId=733558
-//     // for the documentation about the tasks.json format
-//     "version": "2.0.0",
-//     "tasks": [
-//         {
-//             "label": "build",
-//             "type": "shell",
-//             "command": "msbuild",
-//             "args": [
-//                 // Ask msbuild to generate full paths for file names.
-//                 "/property:GenerateFullPaths=true",
-//                 "/t:build"
-//             ],
-//             "group": "build",
-//             "presentation": {
-//                 // Reveal the output only if unrecognized errors occur.
-//                 "reveal": "silent"
-//             },
-//             // Use the standard MS compiler pattern to detect errors, warnings and infos
-//             "problemMatcher": "$msCompile"
-//         }
-//     ]
-// }

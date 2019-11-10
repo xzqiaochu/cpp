@@ -1,4 +1,4 @@
-// A-昂贵的字符串 std
+// A-昂贵的字符串-std（牛客CSP-J入门组赛前集训营5）
 // https://ac.nowcoder.com/acm/contest/1093/A
 // author: Liu
 // status: AC

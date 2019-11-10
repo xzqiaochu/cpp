@@ -82,8 +82,8 @@ bool check(int x) {
 }
 
 int main() {
-	freopen("track.in", "r", stdin);
-	freopen("track.out", "w", stdout);
+	// freopen("track.in", "r", stdin);
+	// freopen("track.out", "w", stdout);
 	scanf("%d%d", &n, &m);
 	for (int i = 1; i <= n - 1; i++) {
 		int x, y, z;
