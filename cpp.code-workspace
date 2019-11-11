@@ -6,8 +6,8 @@
 	],
 	"settings": {
 		//code
-		"files.autoGuessEncoding": false,
-		"files.encoding": "gbk",
+		"files.autoGuessEncoding": true,
+		"files.encoding": "utf8",
 		//compiled
 		"c-cpp-compile-run.cpp-flags": "-Wall -Werror -Wl,--stack=536870912",
 		//cpp_file
