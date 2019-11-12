@@ -16,9 +16,10 @@ int main() {
 
 	// 编译程序
 	puts("Compiling my.cpp...");
+	// 栈空间512M
 	// 我这里是最严格的编译，所有警告都会被视作致命错误
-	if (system("g++ my.cpp -o my.exe -Wall -Werror"))
-	// if (system("g++ my.cpp -o my.exe -Wall"))
+	if (system("g++ my.cpp -o my.exe -Wall -Werror -Wl,--stack=536870912"))
+	// if (system("g++ my.cpp -o my.exe -Wall -Wl,--stack=536870912"))
 		return 0;
 	puts("Compiled");
 

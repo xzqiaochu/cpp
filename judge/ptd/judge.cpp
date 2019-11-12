@@ -19,9 +19,10 @@ int main() {
 	// 编译程序
     sprintf(tmp, "Compiling %s.cpp...", name);
 	puts(tmp);
+	// 栈空间512M
 	// 我这里是最严格的编译，所有警告都会被视作致命错误
-    sprintf(tmp, "g++ %s.cpp -o %s.exe -Wall -Werror", name, name);
-	// sprintf(tmp, "g++ %s.cpp -o %s.exe -Wall", name, name);
+    sprintf(tmp, "g++ %s.cpp -o %s.exe -Wall -Werror -Wl,--stack=536870912", name, name);
+	// sprintf(tmp, "g++ %s.cpp -o %s.exe -Wall -Wl,--stack=536870912", name, name);
 	if (system(tmp))
 		return 0;
 	puts("Compiled");
