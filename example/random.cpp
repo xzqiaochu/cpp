@@ -8,15 +8,19 @@
 #include <cstdlib>
 #include <ctime>
 
+void mainInit() {
+	timeb timeseed; // 这是一个结构体
+	ftime(&timeseed); // 获取目前时间
+	// 设置随机数种子为系统时间，不然的话，每次运行程序获取的随机数序列都是相同的
+	srand(timeseed.time * 1000 + timeseed.millitm); // 毫秒级随机数种子 
+}
+
 int rdm(int a, int b) {
 	return (rand() % (b - a + 1)) + a;
 }
 
 int main() {
-	timeb timeseed; //这是一个结构体
-	ftime(&timeseed); //获取目前时间
-	//设置随机数种子为系统时间，不然的话，每次运行程序获取的随机数序列都是相同的
-	srand(timeseed.time * 1000 + timeseed.millitm);
+	mainInit();
 	int cnt1 = 0, cnt2 = 0;
 	for (int i = 1; i <= 100000; i++) {
 		int temp = rdm(0, 1);
