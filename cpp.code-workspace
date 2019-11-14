@@ -70,7 +70,9 @@
 			"utility": "cpp",
 			"valarray": "cpp",
 			"algorithm": "cpp",
-			"queue": "cpp"
+			"queue": "cpp",
+			"regex": "cpp",
+			"string": "cpp"
 		}
 	}
 }
