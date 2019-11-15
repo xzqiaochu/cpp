@@ -22,8 +22,7 @@ int inv(int a, int b)
 {
     int x, y;
     exgcd(a, b, x, y);
-    return x; // 加上 k*b
-     可调为正数
+    return x; // 加上 k*b 可调为正数
     // y 为 b (mod a) 的逆元
 }
 
